@@ -1,0 +1,443 @@
+/* ==========================================================================
+   ALINA IS THE GOAT — Editorial Luxury Tribute
+   Design: Swiss Editorial / High-Fashion Typography
+   ========================================================================== */
+
+:root {
+  --bg-primary: #09090b;
+  --bg-secondary: #121216;
+  --text-main: #f4efe6;
+  --text-muted: #8e8b82;
+  --accent-gold: #d4af37;
+  --accent-gold-light: #f7e7b4;
+  --accent-champagne: #e5d3b3;
+  --accent-crimson: #c83e4d;
+  --border-subtle: rgba(244, 239, 230, 0.08);
+  --border-active: rgba(212, 175, 55, 0.4);
+  
+  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, "SF Mono", "Menlo", "Monaco", "Cascadia Mono", monospace;
+  
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+/* --------------------------------------------------------------------------
+   Background Ambiance & Film Grain
+   -------------------------------------------------------------------------- */
+.ambient-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(circle at 50% 45%, rgba(212, 175, 55, 0.07) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(200, 62, 77, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(247, 231, 180, 0.05) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(9, 9, 11, 0.3) 0%, rgba(9, 9, 11, 0.95) 100%);
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* --------------------------------------------------------------------------
+   Confetti Canvas
+   -------------------------------------------------------------------------- */
+#confetti-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Editorial Corner Framing
+   -------------------------------------------------------------------------- */
+.editorial-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.frame-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.frame-item.top-right {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.sub-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: rgba(244, 239, 230, 0.35);
+}
+
+.status-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-gold);
+  box-shadow: 0 0 10px var(--accent-gold);
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+/* --------------------------------------------------------------------------
+   Hero Stage & Typography
+   -------------------------------------------------------------------------- */
+.hero-stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  padding: 2rem;
+}
+
+.title-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 90vw;
+  cursor: default;
+}
+
+/* Eyebrow badge */
+.eyebrow-container {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+}
+
+.editorial-line {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+
+.eyebrow-text {
+  font-family: var(--font-serif);
+  font-size: clamp(0.95rem, 1.4vw, 1.25rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent-champagne);
+}
+
+/* Main Monumental Title */
+.main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.86;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+.word {
+  display: inline-flex;
+  justify-content: center;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.letter {
+  display: inline-block;
+  transition: transform 0.4s var(--ease-out-expo), color 0.4s ease;
+  position: relative;
+}
+
+.letter:hover {
+  transform: translateY(-8px) scale(1.04);
+  color: var(--accent-gold-light);
+}
+
+/* Word 1: ALINA */
+.name-highlight {
+  font-size: clamp(4.5rem, 16vw, 15rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  background: linear-gradient(180deg, #ffffff 15%, #ded8ce 65%, #a8a297 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7));
+}
+
+/* Word 2: IS — THE */
+.connector {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.8rem, 5vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold);
+  margin: 0.15em 0;
+  text-transform: uppercase;
+  opacity: 0.95;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.sub-word {
+  display: inline-flex;
+}
+
+.connector-sep {
+  opacity: 0.45;
+  font-style: normal;
+  font-family: var(--font-display);
+  font-size: 0.7em;
+  color: var(--accent-champagne);
+}
+
+.connector .letter {
+  margin: 0 0.04em;
+}
+
+/* Word 3: GOAT */
+.goat-word {
+  font-size: clamp(5rem, 18vw, 17rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  background: linear-gradient(180deg, #fff7d6 0%, #e6ba55 45%, #b38328 85%, #664710 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 15px 35px rgba(212, 175, 55, 0.25));
+  position: relative;
+}
+
+/* Stamp Seal Accent */
+.stamp-seal {
+  margin-top: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 9999px;
+  background: rgba(18, 18, 22, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.stamp-seal:hover {
+  border-color: var(--border-active);
+  transform: translateY(-2px);
+  background: rgba(28, 28, 35, 0.85);
+  box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.15);
+}
+
+.stamp-seal:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.seal-icon {
+  font-size: 0.65rem;
+  color: var(--accent-gold);
+}
+
+.seal-text {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-champagne);
+}
+
+/* --------------------------------------------------------------------------
+   Editorial Footer & Tasteful Controls
+   -------------------------------------------------------------------------- */
+.editorial-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.25rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.caption {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  pointer-events: auto;
+}
+
+/* Buttons */
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(244, 239, 230, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+  backdrop-filter: blur(8px);
+}
+
+.btn-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+}
+
+.pill-btn:hover {
+  background: rgba(244, 239, 230, 0.12);
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.pill-btn:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.icon-toggle-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(244, 239, 230, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+  backdrop-filter: blur(8px);
+}
+
+.icon-toggle-btn:hover {
+  color: var(--text-main);
+  border-color: rgba(244, 239, 230, 0.25);
+  transform: translateY(-2px);
+}
+
+.icon-toggle-btn:active {
+  transform: translateY(0) scale(0.94);
+}
+
+.toggle-icon.hidden {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile & Compact Viewport Optimizations
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .editorial-frame {
+    padding: 1.5rem;
+  }
+  
+  .editorial-footer {
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
+  }
+  
+  .footer-left {
+    align-items: center;
+  }
+
+  .eyebrow-container {
+    margin-bottom: 1rem;
+    gap: 0.75rem;
+  }
+
+  .editorial-line {
+    width: 24px;
+  }
+
+  .stamp-seal {
+    margin-top: 1.75rem;
+  }
+}

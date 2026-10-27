@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ALINA IS THE GOAT</title>
+  
+  <meta name="description" content="A tribute to greatness. ALINA IS THE GOAT.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
+
+  <!-- Typography: Syne (Ultra-bold display) & Cormorant Garamond (Editorial luxury serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400;1,600&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Film Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Ambient Luxury Glow -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Background Canvas for Continuous Physics Confetti -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- Editorial Corner Marks -->
+  <header class="editorial-frame" aria-hidden="true">
+    <div class="frame-item top-left">
+      <span class="mono-label">VERIFIED RECORD</span>
+      <span class="sub-label">REF. ∞ / 001</span>
+    </div>
+    <div class="frame-item top-right">
+      <span class="status-indicator"></span>
+      <span class="mono-label">IN PERPETUITY</span>
+    </div>
+  </header>
+
+  <!-- Main Hero Content -->
+  <main class="hero-stage">
+    <div class="title-lockup">
+      <div class="eyebrow-container">
+        <span class="editorial-line"></span>
+        <span class="eyebrow-text">THE UNDISPUTED TITLE</span>
+        <span class="editorial-line"></span>
+      </div>
+
+      <h1 class="main-title" aria-label="ALINA IS THE GOAT">
+        <span class="word name-highlight">
+          <span class="letter">A</span><span class="letter">L</span><span class="letter">I</span><span class="letter">N</span><span class="letter">A</span>
+        </span>
+        <span class="word connector">
+          <span class="sub-word">
+            <span class="letter">I</span><span class="letter">S</span>
+          </span>
+          <span class="connector-sep" aria-hidden="true">—</span>
+          <span class="sub-word">
+            <span class="letter">T</span><span class="letter">H</span><span class="letter">E</span>
+          </span>
+        </span>
+        <span class="word goat-word">
+          <span class="letter">G</span><span class="letter">O</span><span class="letter">A</span><span class="letter">T</span>
+        </span>
+      </h1>
+
+      <div class="stamp-seal" id="interactive-seal" role="button" tabindex="0" title="Click for extra celebration">
+        <div class="seal-ring"></div>
+        <div class="seal-inner">
+          <span class="seal-icon">✦</span>
+          <span class="seal-text">UNIVERSAL CONSENSUS</span>
+          <span class="seal-icon">✦</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Editorial Accents & Tasteful Interactive Controls -->
+  <footer class="editorial-footer">
+    <div class="footer-left">
+      <span class="mono-label">GREATEST OF ALL TIME</span>
+      <p class="caption">No debate. No contest. Certified forever.</p>
+    </div>
+    
+    <div class="footer-right">
+      <button class="pill-btn" id="confetti-burst-btn" type="button" aria-label="Trigger Confetti Blast">
+        <span class="btn-dot"></span>
+        <span>CELEBRATE</span>
+      </button>
+
+      <button class="icon-toggle-btn" id="confetti-toggle-btn" type="button" aria-label="Toggle Confetti Animation" title="Pause / Resume Confetti">
+        <svg class="toggle-icon pause-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+          <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+        </svg>
+        <svg class="toggle-icon play-icon hidden" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+      </button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
